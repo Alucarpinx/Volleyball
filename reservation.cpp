@@ -1,32 +1,3 @@
-﻿//o Create(C) a reservation :
-// Enter the passenger’s first name(there are no duplicates in the file).If the name is NOT
-//in the database print an error message and return to the menu.
-// If the name is in the database, report the number of seat - credits the passenger has
-//remaining.
-// If the passenger has zero credits, they cannot make a reservation and must provide their
-//own transportation.Print an error message and return to the menu.
-// After displaying a simple diagram showing the seat availability(see below), have the user
-//select a seat.
-//In this diagram a(-) indicates the driver’s
-//seat, an(X) indicates the seat has been
-//taken and a number(1, 2, 3, &5) indicates
-//the seat is available and the number of
-//credits required to reserve this seat.
-//Note: Your diagram does not need to look
-//exactly like this.Be creative, make it
-//interesting and UNDERSTANDABLE.
-// The passenger can select a seat by category or by a specific seat in a specific vehicle.
-// If they select by category, for example a front - seat, they will be assigned a front
-//seat in the first available vehicle.
-// They can also select a specific seat in a specific vehicle.For example, Green
-//Sedan, middle back - seat.Note: For seats with common positions and value(i.e.
-//	back seats in compact cars or side - back seats in sedans) the passenger does not
-//	(cannot)select the specific side.
-//	 If the selected seat is available and the member has the required credits, complete the
-//	reservation, otherwise print an error message and re - prompt for a seat selection.
-//	 Once the reservation process is complete, assigned a unique three - digit reservation PIN
-//	number
-// 
 #include <string>
 #include <iostream>
 #include <vector>
@@ -230,29 +201,3 @@ void reservation::printReservations() {
 }
 //	vector<team_mem> mum_drive 
 //}
-
-
-int main() {
- 
-
-    string word;
-    vector words;
-    while (inFile >> word) {
-        words.push_back(word);
-    }
-    for (string word : words) {
-        
-    }
-
-    inFile.close();
-
-    // Now, the 'words' vector contains the separated words from the file
-    for (const std::string& w : words) {
-        std::cout << w << std::endl;
-    }
-
-    return 0;
-}
-
-
-
