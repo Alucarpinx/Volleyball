@@ -23,9 +23,35 @@ ifstream Opendodgeball()
 	}
 	return (temp);
 }
-
 int main()
 {
+	//initulize file and assign it
+	ifstream inFile;
+	inFile = Opendodgeball();
+
+	//vetors for song and strings for NAME ARTIST AND URL
+	vector<team_mem> nun_Drive;
+	string NunDriver_first;
+	string NunDriver_last;
+	int credits_;
+
+	vector<team_mem> Driver;
+	string Driver_first;
+	string Driver_last;
+
+	team_mem tempmem;
+	team_mem tempName;
+
+		for (int i = 0; i < 9; i++) {
+			inFile >> Driver_first >> Driver_last;
+			team_mem tempmem(Driver_first, Driver_last, -1);
+			Driver.push_back(tempmem);
+		}
+		for (int i = 0; i < 24; i++) {
+			inFile >> Driver_first >> Driver_last >> credits_;
+			team_mem tempName(Driver_first, Driver_last, credits_);
+			nun_Drive.push_back(tempName);
+
     char opt;
 
     //do while not 9 
@@ -40,7 +66,7 @@ int main()
         cout << " Enter Option: ";
         cin >> opt;
 
-        string in;
+        string in_;
         //checks option does case statement
         switch (opt)
         {
@@ -48,8 +74,10 @@ int main()
 
             cout << "Create Reservation" << endl;
             cout << "------------------------" << endl;
-            cout << "Enter First Name : ";
-            cin >> in;
+            reserveReservation();
+			void displayVehicles();
+			}
+   	    }
             break;
         case '2':
             // displays a line choosen
