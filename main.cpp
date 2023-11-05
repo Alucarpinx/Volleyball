@@ -1,14 +1,31 @@
+#include "dodgeball.h"
 #include <vector>
 #include <iomanip>
 #include <fstream>
 #include <iostream>
-//#include <cstdlib>
+#include <cstdlib>	
 #include <string>
 
 using namespace std;
 
-void main() {
+//Open the text file
+ifstream Opendodgeball()
+{
+	string inFileName = "dodgeball_team.txt";
+	ifstream temp;
 
+	temp.open(inFileName.c_str());
+
+	//check if it was open
+	if (!temp.is_open()) {
+		cout << "\nUnsuccessfully... Program Terminated\n" << endl;
+		exit(1);
+	}
+	return (temp);
+}
+
+int main()
+{
     char opt;
 
     //do while not 9 
