@@ -85,7 +85,7 @@ void reservation::modifyReservation() {
 
     bool reservationFound = false;
     int index = -1;
-    for (int i = 0; i < non_Driver.size(); i++) {
+    for (int i = 0; i < reservations.size(); i++) {
         if ((reservations[i].first_name == firstName) && (reservations[i].PIN == PIN)) {
             reservationFound = true;
             index = i;
@@ -126,7 +126,7 @@ void reservation::deleteReservation() {
 
     bool reservationFound = false;
     int index = -1;
-    for (int i = 0; i < non_Driver.size(); i++) {
+    for (int i = 0; i < reservations.size(); i++) {
         if (reservations[i].first_name == firstName && reservations[i].PIN == PIN) {
             reservationFound = true;
             index = i;
@@ -177,11 +177,11 @@ void reservation::printReservations() {
             cout << "Error creating output file.\n";
             return
         }
-        for (int h = 0; h < reservatiom.size(); h++) {
-                outputFile << "Vehicle : " << reservation.vehicle << endl;
-                outputFile << "driver : " << reservation.DriverName << endl;
-                if (resevation.seat != -1) {
-                    outputFile << "Passenger: " << reservation.passenger << ", Seat " << reservation.seat << endl;
+        for (int h = 0; h < reservations.size(); h++) {
+                outputFile << "Vehicle : " << reservations.vehicle << endl;
+                outputFile << "driver : " << reservations.DriverName << endl;
+                if (resevations.seat != -1) {
+                    outputFile << "Passenger: " << reservations.passenger << ", Seat " << reservations.seat << endl;
                 }
                 else {
                     outputFile << "Passenger unassigned\n";
