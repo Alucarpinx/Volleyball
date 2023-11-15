@@ -1,28 +1,30 @@
 #pragma once
 #include <string>
-#include <iostream>
+#include <vector>
 
 using namespace std;
 
-class reservation {
-//private:
-//	string first_name;
-//	string vehicle;
-//	string vehicleColor;
-//	string seat;
-//	int PIN;
-public:
-	string first_name;
-	string vehicle;
-	string vehicleColor;
-	string seat;
-	int PIN;
-private:
-	void reserveReservation(string);
-	void modifyReservation();
-	void deleteReservation();
-	void printVehicle();
-	void printReservations();
-	void displayVehicles();
-};
 
+class reservation
+{
+private:
+    string name;
+    string carType;
+    string carColor;
+    int pin = 0;
+    string seat;
+ 
+
+public:
+    reservation();
+    reservation(string, string, string, int, string);
+    string getName();
+    string get_carType();
+    string get_carColor();
+    string getSeat();
+    void setName(string);
+    void setCarType(string);
+    void setSeat(string);
+    int getPin();
+    //void delete(vector<>&, vector<>&, vector<>&, vector<>&, string, int);
+};
